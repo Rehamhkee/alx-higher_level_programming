@@ -1,8 +1,8 @@
-ectangle module
-
-This module provides the Rectangle object
+#!/usr/bin/python3
+"""
+Defining an empty class Rectangle
 """
 
-class Rectangle():
-	""" A simple Rectangle class """
-	pass
+class Rectangle:
+"""empty representation of a Rectangle"""
+pass
