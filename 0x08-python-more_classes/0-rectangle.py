@@ -1,9 +1,8 @@
+ectangle module
 
-dule 0-rectangle
-Defines an empty class called Rectangle
+This module provides the Rectangle object
 """
 
-
-class Rectangle:
-    """Empty class."""
-    pass
+class Rectangle():
+	""" A simple Rectangle class """
+	pass
