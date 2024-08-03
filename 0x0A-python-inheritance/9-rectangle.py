@@ -1,10 +1,6 @@
 #!/usr/bin/python3
-"""
-This is module 9-rectangle
-
-This module contains:
--one class
--two functions
+"""Module 9-rectangle
+Creates a Rectangle class
 """
 
 
@@ -12,42 +8,35 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """
-    inherits class from BaseGeometry (7-base_geometry)
-
-    Instantiation with width and height:
-    def __init__(self, width, height):
-    width and height must be private. No getter or setter
-    width and height must be positive integers, validated by integer_validator
-
-    Args:
-    width
-    height
-    Returns:
-    area of shape
+    """Represents a rectangle
+    Private instances attributes:
+        - width
+        - height
+    Public method area()
+    Inherits from BaseGeometry
     """
 
     def __init__(self, width, height):
+        """Initializes an instance
+
+        Args:
+            - width: rectangle width
+            - height: rectangle height
         """
-        private instantiation
-        """
+
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-        BaseGeometry.integer_validator(self, "width", self.__width)
-        BaseGeometry.integer_validator(self, "height", self.__height)
-
-    def area(self):
-        """
-        returns the area
-        """
-        return (self.__width * self.__height)
 
     def __str__(self):
+        """Returns a formatted string"""
+
+        return str("[Rectangle] {}/{}".format(self.__width, self.__height))
+
+    def area(self):
+        """Computes the area of the rectangle instance
+        Overwrites the area() method from BaseGeometry
         """
-        instance method for string - print class name with
-        following rectangle description: [Rectangle] <width>/<height>
-        """
-        return ("[{:s}] {:d}/{:d}".
-                format(self.__class__.__name__,
-                       self.__width,
-                       self.__height))
+
+        return self.__width * self.__height
